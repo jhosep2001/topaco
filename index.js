@@ -13,10 +13,13 @@ server.get('/', function(request, response) {
   response.sendFile( __dirname + '/public/indice.html');
 });
 
-/*//   CoffeeScript o TypeScript
+//   CoffeeScript o TypeScript
 function atenderServidor( request, response ){
 	console.log( "Peticion recibida : " + request.url );
-	
+	if ( request.url == "/favicon.ico"){
+		response.sendFile( __dirname + '/public/indice.html');
+	}
+	/* 
 	if( request.url == "/fecha" ){
 		var f = new Date();
 		response.end(  f.toString() );
@@ -35,6 +38,7 @@ function atenderServidor( request, response ){
 	}
 
 }
+/*
 // Web Service que Reenvia los datos de Encicla
 function retornarEncicla( request, response ){
 	console.log( "Contactando el servicio de Encicla" );
