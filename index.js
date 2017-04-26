@@ -19,6 +19,7 @@ function atenderServidor( request, response ){
 	if ( request.url == "/favicon.ico"){
 		response.sendFile( __dirname + '/public/indice.html');
 	}
+}
 	/* 
 	if( request.url == "/fecha" ){
 		var f = new Date();
