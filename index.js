@@ -9,16 +9,11 @@ console.log( "Servidor Pobre iniciado" );
 // Iniciar la escucha del servidor en el puero 8088
 server.listen( process.env.PORT || 5000);
 
-server.get('/', function(request, response) {
-  response.sendFile( __dirname + '/public/indice.html');
-});
-
 //   CoffeeScript o TypeScript
 function atenderServidor( request, response ){
 	console.log( "Peticion recibida : " + request.url );
-	if ( request.url == "/favicon.ico"){
-		response.sendFile( __dirname + '/public/indice.html');
-	}
+	response.sendFile( __dirname + '/public/indice.html');
+	
 }
 	/* 
 	if( request.url == "/fecha" ){
